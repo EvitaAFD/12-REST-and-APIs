@@ -13,7 +13,11 @@
       headers: {
         Authorization: `token ${githubToken}`}
     })
-      .then(data => repos.all = data, err => console.error(err))
+      .then(data => {
+        repos.all = data;
+        console.log(data);
+      },
+      err => console.error(err))
       .then(callback);
   };
 
